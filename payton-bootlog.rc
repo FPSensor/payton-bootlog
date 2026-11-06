@@ -1,0 +1,14 @@
+# Bring-up boot logger: dumps the kernel log, logcat, properties and
+# processes to /mnt/vendor/persist/bootlog every few seconds so a boot
+# that hangs or resets cold can be inspected from recovery.
+# TODO: drop once payton boots.
+
+service payton_bootlog /system/bin/sh /system/etc/payton-bootlog.sh
+    user root
+    group root log
+    seclabel u:r:su:s0
+    disabled
+    oneshot
+
+on post-fs
+    start payton_bootlog
