@@ -60,8 +60,8 @@ and DRM.
        $(LOCAL_PATH)/bootlog/payton-bootlog.sh:$(TARGET_COPY_OUT_SYSTEM)/etc/payton-bootlog.sh
    endif
    ```
-3. Make sure `/mnt/vendor/persist` is mounted by `post-fs`. On msm8998
-   devices the vendor fstab mounts it in first stage.
+3. Make sure `/mnt/vendor/persist` is mounted by `post-fs`. On the
+   sdm660-common devices the vendor fstab mounts it in first stage.
 4. Optional, but useful together with it:
    - larger log buffers, `ro.logd.size=16M`;
    - a kernel with ramoops console, pmsg and dmesg records, so `pstore/`
